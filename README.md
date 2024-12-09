@@ -33,7 +33,7 @@ El proyecto utiliza **Django Rest Framework (DRF)** para la creación de las API
 
 1. Clona este repositorio:
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone https://github.com/hacarapi/Diplomado_Modulo_5_Proyecto_Django.git
    cd parqueo
    ```
 
