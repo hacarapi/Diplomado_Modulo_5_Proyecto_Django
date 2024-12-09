@@ -16,8 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from estacionamiento.views import VehiculoViewSet, EspacioViewSet, TarifaViewSet, RegistroViewSet, verificar_espacio_disponible
+
+router = DefaultRouter()
+router.register(r'vehiculos', VehiculoViewSet)
+router.register(r'espacios', EspacioViewSet)
+router.register(r'tarifas', TarifaViewSet)
+router.register(r'registros', RegistroViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('estacionamiento/', include('estacionamiento.urls')),
+    path('api/', include(router.urls)),
+    path('api/verificar-espacio/', verificar_espacio_disponible),
 ]
